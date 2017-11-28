@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript" src="js/jquery-1.11.3.js"></script>
+		<style type="text/css">
+			#guitar {
+				background: deepskyblue;
+				width: 200px;
+				height: 200px;
+				margin: 50px 0px;
+			}
+			
+			#piano {
+				background: gold;
+				width: 200px;
+				height: 200px;
+				margin: 50px 0px;
+			}
+			
+			#skidding {
+				background: greenyellow;
+				width: 200px;
+				height: 200px;
+				margin: 50px 0px;
+			}
+			
+			#photography {
+				background: gray;
+				width: 200px;
+				height: 200px;
+				margin: 50px 0px;
+			}
+			.circle{
+				border-radius: 100px;
+			}
+			.shadow{
+				box-shadow: gold;
+			}
+		</style>
+	</head>
+
+	<body>
+												<!--第三大类：筛选
+													过滤
+												eq(index|-index) 
+												first() 
+												last() 
+												hasClass(class) 
+												filter(expr|obj|ele|fn) 
+												is(expr|obj|ele|fn) 
+												has(expr|ele) 
+												not(expr|ele|fn) 
+													查找
+												children([expr]) 
+												find(e|o|e) 
+												next([expr]) 
+												offsetParent() 
+												parent([expr]) 
+												parents([expr]) 
+												prev([expr]) 
+												siblings([expr]) -->
+ 
+
+		<div id="guitar" class="circle">
+			guitar
+			<ul>
+				<span class="kid"></span>
+				<span></span>
+				<span></span>
+			</ul>
+		</div>
+		
+		<div id="piano">
+			piano
+		</div>
+		<div id="skidding">
+			skidding
+		</div>
+		
+		<div id="photography" class="circle shadow" >
+			photography
+		</div>
+		
+		<i>a</i>
+		<i class="xixi">b</i>
+		<em>c</em>
+		<em></em>
+		<em></em>
+		<em></em>
+		<em></em>
+		<em></em>
+		<em class="un"></em>
+
+
+		
+		<script type="text/javascript">
+			console.log($('div').eq(0).html())//eq()
+			
+			console.log($('div').last().html())//last()
+			
+			console.log($('div').first().html())//first()
+			
+			$('#guitar').click(function  () {
+				if ($('div').eq(3).hasClass('circle')) {
+				console.log('its fucking exist!')
+			}
+			})//hasClass()
+			
+			
+			console.log($('div').filter('.shadow').html())//filter()
+			
+			
+			console.log($('div:nth-last-of-type(2)').siblings('.shadow').is($('#photography')))//is()
+			
+			$('div').has('ul').css({"position":"relative","left":100,"top":10})//has()
+			
+			$('div').not('#guitar').html('<p></p>')//not()
+			
+			
+			$('ul').children('.kid').html('hi,boy!');
+			
+		
+			console.log($('body').find('div'))
+			console.log($('body').find('span'))
+			console.log($('body').find('#photography'))//find()
+
+			console.log($('i').next())
+			console.log($('i').next('.xixi'))//next()
+			
+			$('span').offsetParent().css({"color":"red"})
+			console.log($('span.kid').offsetParent())//offsetparent()第一个采用定位的祖先元素
+			
+			console.log($('p').parent())
+			console.log($('p').parent('#piano'))//parent()
+			
+			console.log($('p').parents())//parents()除了父亲，还包括了爷爷，曾爷爷
+			
+			console.log($('i').prev())//pre()与next()刚好相反
+			
+			console.log($('#skidding').siblings())//siblings()
+		</script>
+	</body>
+
+</html>
