@@ -97,7 +97,7 @@
 
 		
 		<script type="text/javascript">
-			console.log($('div').eq(0).html())//eq()
+			console.log($('div').eq(0).html())//获取第N个元素
 			
 			console.log($('div').last().html())//last()
 			
